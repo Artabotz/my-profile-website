@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 5px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .container {
+            width: 55%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            backdrop-filter: blur(40px);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-details h2 {
+            color: #007d86;
+            margin-bottom: 5px;
+        }
+
+        .profile-details p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h3 {
+            color: #007d86;
+            border-bottom: 2px solid #F3E600;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .range {
+            position: relative;
+            background-color: #333;
+            width: 100%;
+            height: 30px;
+            transform: skew(30deg);
+            font-family: 'Orbitron', monospace;
+        }
+
+        .range:before {
+            --width: calc(var(--p) * 1%);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #F3E600;
+            z-index: 0;
+            animation: load .5s forwards linear, glitch 2s infinite linear;
+        }
+
+        .range:after {
+            counter-reset: progress var(--p);
+            content: counter(progress) '%';
+            color: #000;
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%) skewX(-30deg);
+            z-index: 1;
+        }
+
+        .range__label {
+            transform: skew(-30deg) translateY(-100%);
+            line-height: 1.5;
+        }
+
+        @keyframes load {
+            to {
+                width: var(--width);
+            }
+        }
+
+        @keyframes glitch {
+            0%, 5% {
+                transform: translate(0, 0);
+            }
+            1% {
+                transform: translate(-5%, -10%);
+            }
+            2% {
+                transform: translate(10%, 30%);
+            }
+            3% {
+                transform: translate(-43%, 10%);
+            }
+            4% {
+                transform: translate(2%, -23%);
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="home">
+        <img src="image/imageee.jpeg" alt="Foto Profil" class="profile-img">
+        <div class="profile-details">
+            <h2>Putu Juni Arta Yasa</h2>
+            <p>Umur: 17 tahun</p>
+            <p>Asal: Buleleng</p>
+            <p>Email: parta0659@gmail.com</p>
+            <p>Telepon: 087752078682</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/kertayasaaa_/" target="_blank">
+                <img src="image/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com/@orbcylopz?lang=id-ID" target="_blank">
+                <img src="image/tiktok.jfif" alt="Twitter">
+            </a>
+            <a href="https://open.spotify.com/user/31vfz6jqqf7wxxbzoz7paiicgxny?si=c301576697d248bf" target="_blank">
+                <img src="image/spotify-icon-free-png.webp" alt="Spotify">
+            </a>
+        </div>
+    </div>
+
+    <div class="container" id="about">
+        <div class="section">
+            <h3>Tentang Saya</h3>
+            <p>Saya adalah seorang siswa SMA yang tertarik dalam dunia teknologi. Saya senang belajar hal-hal baru dan mencoba tantangan baru.</p>
+        </div>
+    </div>
+
+    <div class="container" id="education">
+        <div class="section">
+            <h3>Pendidikan</h3>
+            <p><strong>SMK:</strong> Wira Harapan</p>
+        </div>
+    </div>
+
+    <div class="container" id="progress">
+        <div class="section">
+            <h3>Keahlian</h3>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="range" style="--p:80">
+                    <div class="range__label"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>CSS</p>
+                <div class="range" style="--p:60">
+                    <div class="range__label"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="range" style="--p:30">
+                    <div class="range__label"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
